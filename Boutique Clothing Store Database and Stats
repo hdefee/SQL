@@ -1,0 +1,29 @@
+--Creating a boutique clothing store database
+
+CREATE TABLE store_inventory (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, color TEXT, size TEXT, manufacturer TEXT, price INTEGER);
+INSERT INTO store_inventory VALUES (1, "Rain Jacket", 2, "Monaco Red", "Small", "Ciao Milano", 119);
+INSERT INTO store_inventory VALUES (2, "Rain Jacket", 2, "Monaco Red", "Medium", "Ciao Milano", 119);
+INSERT INTO store_inventory VALUES (3, "Rain Jacket", 2, "Monaco Red", "Large", "Ciao Milano", 119); 
+INSERT INTO store_inventory VALUES (4, "High Waisted Jeans", 1, "Acid Washed Denim", "28", "Bella Dahl", 
+79);
+INSERT INTO store_inventory VALUES (5, "High Waisted Jeans", 1, "Acid Washed Denim", "30", "Bella Dahl", 79);
+INSERT INTO store_inventory VALUES (6, "High Waisted Jeans", 1, "Acid Washed Denim", "32", "Bella Dahl", 79);
+INSERT INTO store_inventory VALUES (7, "Namaste Crop Top", 2, "Lotus", "Small", "Beyond Yoga", 29);
+INSERT INTO store_inventory VALUES (8, "Namaste Crop Top", 2, "Lotus", "Medium", "Beyond Yoga", 29);
+INSERT INTO store_inventory VALUES (9, "Namaste Crop Top", 2, "Lotus", "Large", "Beyond Yoga", 29);
+INSERT INTO store_inventory VALUES (10, "Phoenix Yoga Pants", 3, "Black", "Small", "Beyond Yoga", 45);
+INSERT INTO store_inventory VALUES (11, "Phoenix Yoga Pants", 3, "Black", "Medium", "Beyond Yoga", 45);
+INSERT INTO store_inventory VALUES (12, "Phoenix Yoga Pants", 3, "Black", "Large", "Beyond Yoga", 45);
+INSERT INTO store_inventory VALUES (13, "Island Wrap", 1, "Sand Dune", "Small", "Barefoot Dreams", 99);
+INSERT INTO store_inventory VALUES (14, "Island Wrap", 1, "Sand Dune", "Medium", "Barefoot Dreams", 99);
+INSERT INTO store_inventory VALUES (15, "Island Wrap", 1, "Sand Dune", "Large", "Barefoot Dreams", 99);
+
+--selecting all the inventory from the store database
+SELECT * FROM store_inventory; 
+
+--ordering the pricing of all store items from cheapest to most costly
+SELECT * FROM store_inventory
+ORDER BY price asc; 
+
+--aggregating the total quanity of items within the store inventory
+SELECT SUM (quantity) FROM store_inventory;
