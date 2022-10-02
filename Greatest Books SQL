@@ -1,0 +1,46 @@
+--Create a ranking of 30 greatest books of all time
+
+CREATE TABLE greatest_books (id INTEGER PRIMARY KEY, title TEXT, author TEXT, ranking INTEGER, type TEXT, pages INTEGER);
+
+INSERT INTO greatest_books VALUES (1, "In Search of Lost Time", "Marcel Proust", 1, "Paperback", 4215);
+INSERT INTO greatest_books VALUES (2, "Ulysses", "James Joyce", 2, "Hardback", 766);
+INSERT INTO greatest_books VALUES (3, "Don Quixote", "Miguel de Cervantes", 3, "Hardback", 1008);
+INSERT INTO greatest_books VALUES (4, "One Hundred Years of Solitude", "Gabriel Garcia Marquez", 4, "Paperback", 432);
+INSERT INTO greatest_books VALUES (5, "Great Gatsby", "F. Scott Fitzgerald", 5, "Paperback", 100);
+INSERT INTO greatest_books VALUES (6, "Moby Dick", "Herman Melville", 6, "Hardback", 635);
+INSERT INTO greatest_books VALUES (7, "War and Peace", "Leo Tolstoy", 7, "Hardback", 1225);
+INSERT INTO greatest_books VALUES (8, "Hamlet", "William Shakespeare", 8, "Paperback", 182);
+INSERT INTO greatest_books VALUES (9, "The Odyssey", "Homer", 9, "Audiobook", 0);
+INSERT INTO greatest_books VALUES (10, "Madame Bovary", "Gustave Flaubert", 10, "Hardback", 394);
+INSERT INTO greatest_books VALUES (11, "The Divine Comedy", "Dante Alighieri", 11, "Paperback", 116);
+INSERT INTO greatest_books VALUES (12, "Lolita", "Vladimir Nabokov", 12, "Audiobook", 0);
+INSERT INTO greatest_books VALUES (13, "The Brothers Karamazov", "Fyodor Dostoyevsky", 13, "Paperback", 120);
+INSERT INTO greatest_books VALUES (14, "Crime and Punishment", "Fyodor Dostoyevsky", 14, "Hardback", 608);
+INSERT INTO greatest_books VALUES (15, "Wuthering Heights", "Emily Bronte", 15, "Paperback", 143);
+INSERT INTO greatest_books VALUES (16, "The Catcher in the Rye", "J.D. Salinger", 16, "Audiobook", 0);
+INSERT INTO greatest_books VALUES (17, "Pride and Prejudice", "Jane Austen", 17, "Paperback", 124);
+INSERT INTO greatest_books VALUES (18, "The Adventures of Huckleberry Finn", "Mark Twain", 18, "Hardback", 366);
+INSERT INTO greatest_books VALUES (19, "Anna Karenina", "Leo Tolstoy", 19, "Paperback", 864);
+INSERT INTO greatest_books VALUES (20, "The Iliad", "Homer", 20, "Paperback", 155);
+INSERT INTO greatest_books VALUES (21, "To The Lighthouse", "Virginia Woolf", 21, "Hardback", 80);
+INSERT INTO greatest_books VALUES (22, "Catch 22", "Joseph Heller", 22, "Paperback", 453);
+INSERT INTO greatest_books VALUES (23, "The Sound and the Fury", "William Faulkner", 23, "Audiobook", 0);
+INSERT INTO greatest_books VALUES (24, "Nineteen Eighty Four", "George Orwell", 24, "Paperback", 328);
+INSERT INTO greatest_books VALUES (25, "Great Expectations", "Charles Dickens", 25, "Hardback", 544);
+INSERT INTO greatest_books VALUES (26, "The Grapes of Wrath", "John Steinbeck", 26, "Hardback", 464);
+INSERT INTO greatest_books VALUES (27, "To Kill A Mockingbird", "Harper Lee", 27, "Paperback", 281);
+INSERT INTO greatest_books VALUES (28, "Jane Eyre", "Charlotte Bronte", 28, "Paperback", 112);
+INSERT INTO greatest_books VALUES (29, "The Sun Also Rises", "Ernest Hemingway", 29, "Paperback", 189);
+INSERT INTO greatest_books VALUES (30, "Leaves of Grass", "Walt Whitman", 30, "Hardback", 360);
+
+--Select the entire database and then aggragate based on a ranking of greater than 5 and order by title
+SELECT * FROM greatest_books;
+SELECT * FROM greatest_books WHERE ranking>5
+ORDER BY title desc;
+
+--Select the books by title and order by number of pages  
+SELECT title FROM greatest_books GROUP BY pages;
+
+--Aggragate the total sum of pages for all books in the table 
+SELECT SUM (pages) FROM greatest_books;
+
