@@ -25,5 +25,5 @@ SELECT * FROM store_inventory;
 SELECT * FROM store_inventory
 ORDER BY price asc; 
 
---aggregating the total quanity of items within the store inventory
+--aggregating the total quantity of items within the store inventory
 SELECT SUM (quantity) FROM store_inventory;
